@@ -1,3 +1,4 @@
+/* GT ULTRA FONT */
 /* Ultra */
 @font-face {
     font-family: 'GT Ultra Standard';
@@ -266,5 +267,14 @@
     src: url('./fonts/GTUltraFine-ThinItalic.woff') format('woff');
     font-weight: 100;
     font-style: italic;
+    font-display: swap;
+}
+
+/* MARKER FONT */
+@font-face {
+    font-family: 'BrownBagLunch';
+    src: url('./fonts/BrownBagLunch.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
     font-display: swap;
 }
