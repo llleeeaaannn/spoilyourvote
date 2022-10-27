@@ -1,12 +1,5 @@
-function component() {
-  const element = document.createElement('div');
+import './style.css';
+import Main from './main.js';
 
-
-  element.innerHTML = 'HECK'
-
-  return element;
-}
-
-document.body.appendChild(component());
-
-console.log('HIIII');
+const main = new Main();
+main.start();

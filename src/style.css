@@ -1,0 +1,281 @@
+/* Import CSS (this should all be added to same file in production) */
+@import url('./fonts.css');
+
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Root Variables */
+:root {
+  --yellow1: rgba(255, 255, 0, 1);
+  --blue1: rgba(0, 0, 255, 1);
+}
+
+/* General Styling */
+* {
+	box-sizing: border-box;
+  font-family: 'GT Ultra Standard', sans-serif;
+	color: var(--yellow1)
+}
+
+html {
+  background-color: var(--blue1);
+}
+
+body {
+  background-color: var(--blue1);
+}
+
+/* Main Page Styling */
+#main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 400rem;
+}
+
+
+/* Home Container */
+#home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 95vh;
+	/* border: 1px solid red; */
+}
+
+#home-container h1 {
+  font-family: 'GT Ultra Median', sans-serif;
+  font-size: 8rem;
+}
+
+#home-container p {
+  font-family: 'GT Light Median', sans-serif;
+  font-size: 2rem;
+  color: white;
+}
+
+/* Scroll Container */
+#scroll-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 25vh;
+}
+
+#scroll-container span {
+  font-family: 'GT Light Median', sans-serif;
+  font-size: 1rem;
+  color: white;
+	color: var(--yellow1);
+}
+
+.scroll-inner-container {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 21vh;
+}
+
+.scroll-inner-container > div {
+	width: 50%;
+}
+
+.scroll-inner-container :last-child {
+	border-left: 0.5px solid var(--yellow1);
+}
+
+/* Footer Styling */
+#footer-container {
+	width: 100%;
+	padding: 3rem;
+	margin-top: auto;
+	background-color: var(--yellow1);
+}
+
+#footer-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+#footer-container span {
+	font-size: 0.75rem;
+	font-family: 'GT Light Median';
+	text-transform: uppercase;
+	color: var(--blue1);
+	cursor: pointer;
+}
+
+.footer-left {
+	justify-self: start;
+}
+
+.footer-center {
+	justify-self: center;
+}
+
+.footer-right {
+	justify-self: end;
+}
+
+.footer-center span,
+.footer-right span {
+	padding-left: 0.25rem;
+	padding-right: 0.5rem;
+	border-right: 1px solid var(--blue1);
+}
+
+.footer-center :last-child ,
+.footer-right :last-child {
+	padding-right: 0;
+	border-right: none;
+}
+
+.footer-center :first-child ,
+.footer-right :first-child {
+	padding-left: 0;
+}
+
+/* Menu Icon Styling */
+#menu-toggle {
+	position: fixed;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 1.5rem;
+  width: 1.5rem;
+	cursor: pointer;
+	z-index: 200;
+}
+
+#menu-toggle .menu-bar {
+  height: 0.2rem;
+  width: 100%;
+  background-color: var(--yellow1);
+  transition: all 300ms ease-in-out;
+}
+
+#menu-toggle .menu-selected {
+  transition: all 300ms ease-in-out;
+  background-color: var(--blue1);
+  transform-origin: top left;
+}
+
+#menu-toggle .menu-selected:nth-of-type(1) {
+  transition: all 300ms ease-in-out;
+  transform: rotate(45deg);
+  transform-origin: top left;
+  width: 1.9rem;
+}
+
+#menu-toggle .menu-selected:nth-of-type(2) {
+  transition: all 100ms ease-in-out;
+  transform-origin: center;
+  width: 0;
+}
+
+#menu-toggle .menu-selected:nth-of-type(3) {
+  transition: all 300ms ease-in-out;
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+  width: 1.9rem;
+}
+
+/* Menu Styling */
+#menu-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: -100vh;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: var(--yellow1);
+	z-index: 100;
+	transition: all 1000ms ease-in-out;
+}
+
+#menu-container.show-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	transition: all 1000ms ease-in-out;
+}
+
+#menu-container span {
+	color: var(--blue1);
+	font-size: 10rem;
+}
+
+/* Menu Media Styling */
+.media-links-container {
+	position: absolute;
+	top: 75vh;
+	left: 50vw;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.media-links-container a {
+	padding: 0.25rem;
+	margin-bottom: 0.25rem;
+	color: var(--blue1);
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: 'GT Light Median', sans-serif;
+}
+
+.media-links-container a:hover {
+	text-decoration: underline;
+}
