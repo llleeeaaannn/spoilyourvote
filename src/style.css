@@ -66,16 +66,22 @@ body {
   background-color: var(--blue1);
 }
 
+.disable-transitions-onload {
+  transition: none !important;
+}
+
 /* Main Page Styling */
 #main-container {
+	position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
   height: 400rem;
+	/* Margin for wave */
+	margin-bottom: 7rem;
 }
-
 
 /* Home Container */
 #home-container {
@@ -85,7 +91,6 @@ body {
   align-items: center;
   width: 100%;
   height: 95vh;
-	/* border: 1px solid red; */
 }
 
 #home-container h1 {
@@ -131,17 +136,38 @@ body {
 	border-left: 0.5px solid var(--yellow1);
 }
 
-/* Footer Styling */
-#footer-container {
-	width: 100%;
-	padding: 3rem;
-	margin-top: auto;
-	background-color: var(--yellow1);
+/* Wave at bottom of main container */
+.bottom-wave {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
 }
 
+.bottom-wave svg {
+  position: relative;
+  display: block;
+  width: calc(139% + 1.3px);
+  height: 1.5rem;
+}
+
+.bottom-wave .wave-fill {
+  fill: var(--blue1);
+}
+
+/* Footer Styling */
 #footer-container {
+	position: fixed;
+	bottom: 0;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+	width: 100%;
+	padding: 10rem 3rem 2.5rem 3rem;
+	margin-top: auto;
+	background-color: var(--yellow1);
+	z-index: -1;
 }
 
 #footer-container span {
@@ -182,16 +208,50 @@ body {
 	padding-left: 0;
 }
 
+/* Logo Styling */
+#logo-container {
+	position: fixed;
+  top: 2rem;
+  left: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+	z-index: 200;
+}
+
+#logo-container span {
+	color: var(--yellow1);
+	font-size: 1rem;
+	font-family: 'GT Ultra Fine';
+	animation: 1s linear logo-blue-to-yellow;
+}
+
+#logo-container.show-menu span {
+	color: var(--blue1);
+	animation: 0.2s linear logo-yellow-to-blue;
+}
+
+@keyframes logo-yellow-to-blue {
+  0% { color: var(--yellow1); }
+  100% { color: var(--blue1); }
+}
+
+@keyframes logo-blue-to-yellow {
+  0% { color: var(--blue1); }
+  100% { color: var(--yellow1); }
+}
+
 /* Menu Icon Styling */
 #menu-toggle {
 	position: fixed;
   top: 2rem;
-  right: 2rem;
+  right: 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.65rem;
+  width: 1.65rem;
 	cursor: pointer;
 	z-index: 200;
 }
@@ -213,7 +273,7 @@ body {
   transition: all 300ms ease-in-out;
   transform: rotate(45deg);
   transform-origin: top left;
-  width: 1.9rem;
+  width: 2.1rem;
 }
 
 #menu-toggle .menu-selected:nth-of-type(2) {
@@ -226,7 +286,7 @@ body {
   transition: all 300ms ease-in-out;
   transform: rotate(-45deg);
   transform-origin: bottom left;
-  width: 1.9rem;
+  width: 2.1rem;
 }
 
 /* Menu Styling */
@@ -242,14 +302,14 @@ body {
 	height: 100vh;
 	background-color: var(--yellow1);
 	z-index: 100;
-	transition: all 1000ms ease-in-out;
+	transition: all 750ms ease-in-out;
 }
 
 #menu-container.show-menu {
 	position: fixed;
 	top: 0;
 	left: 0;
-	transition: all 1000ms ease-in-out;
+	transition: all 750ms ease-in-out;
 }
 
 /* Menu Media Styling */
@@ -260,12 +320,12 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	cursor: pointer;
 }
 
 .media-links-container div {
 	position: relative;
 	margin-bottom: 0.75rem;
+	cursor: pointer;
 }
 
 .media-links-container div a {

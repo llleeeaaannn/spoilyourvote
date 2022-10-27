@@ -15,6 +15,7 @@ export default class Main {
   }
 
   menuToggleListener() {
+    const logo = document.getElementById('logo-container');
     const menuBars = document.querySelectorAll('.menu-bar');
     const menuToggle = document.getElementById('menu-toggle');
     const menuContainer = document.getElementById('menu-container');
@@ -23,6 +24,7 @@ export default class Main {
       menuBars.forEach(bar => bar.classList.toggle('menu-selected'));
       menuContainer.classList.toggle('show-menu');
       mainContainer.classList.add('show-menu');
+      logo.classList.toggle('show-menu');
     });
   }
 
