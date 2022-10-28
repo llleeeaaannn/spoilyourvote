@@ -91,17 +91,26 @@ body {
   align-items: center;
   width: 100%;
   height: 95vh;
+	/* border: 1px solid red; */
 }
 
 #home-container h1 {
+	padding: 0rem 3rem;
   font-family: 'GT Ultra Median', sans-serif;
+	text-align: center;
   font-size: 8rem;
+	/* border: 1px solid green; */
 }
 
-#home-container p {
-  font-family: 'GT Light Median', sans-serif;
+#home-container h3 {
+	padding: 0rem 3rem;
+	margin-top: 0.5rem;
+	color: white;
   font-size: 2rem;
-  color: white;
+	text-align: center;
+	line-height: 2.25rem; /* Font size + space between each line */
+	font-family: 'GT Light Median', sans-serif;
+	/* border: 1px solid black; */
 }
 
 /* Scroll Container */
@@ -134,6 +143,22 @@ body {
 
 .scroll-inner-container :last-child {
 	border-left: 0.5px solid var(--yellow1);
+}
+
+/* Image Container */
+#image-container {
+	display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+	border: 1px solid red;
+}
+
+#image-container img {
+	height: 20rem;
+	width: auto;
 }
 
 /* Wave at bottom of main container */
@@ -222,14 +247,14 @@ body {
 
 #logo-container span {
 	color: var(--yellow1);
-	font-size: 1rem;
+	font-size: 0.9rem;
 	font-family: 'GT Ultra Fine';
-	animation: 1s linear logo-blue-to-yellow;
+	animation: 0.8s linear logo-blue-to-yellow;
 }
 
 #logo-container.show-menu span {
 	color: var(--blue1);
-	animation: 0.2s linear logo-yellow-to-blue;
+	animation: 0.3s linear logo-yellow-to-blue;
 }
 
 @keyframes logo-yellow-to-blue {
@@ -245,13 +270,13 @@ body {
 /* Menu Icon Styling */
 #menu-toggle {
 	position: fixed;
-  top: 2rem;
+  top: 2.25rem;
   right: 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 1.65rem;
-  width: 1.65rem;
+  height: 1.9rem;
+  width: 1.9rem;
 	cursor: pointer;
 	z-index: 200;
 }
@@ -260,20 +285,20 @@ body {
   height: 0.2rem;
   width: 100%;
   background-color: var(--yellow1);
-  transition: all 300ms ease-in-out;
+  transition: all 800ms ease-in-out;
 }
 
 #menu-toggle .menu-selected {
-  transition: all 300ms ease-in-out;
+  transition: all 200ms ease-in-out;
   background-color: var(--blue1);
   transform-origin: top left;
 }
 
 #menu-toggle .menu-selected:nth-of-type(1) {
-  transition: all 300ms ease-in-out;
+  transition: all 500ms ease-in-out;
   transform: rotate(45deg);
   transform-origin: top left;
-  width: 2.1rem;
+  width: 2.45rem;
 }
 
 #menu-toggle .menu-selected:nth-of-type(2) {
@@ -283,10 +308,10 @@ body {
 }
 
 #menu-toggle .menu-selected:nth-of-type(3) {
-  transition: all 300ms ease-in-out;
+  transition: all 500ms ease-in-out;
   transform: rotate(-45deg);
   transform-origin: bottom left;
-  width: 2.1rem;
+  width: 2.45rem;
 }
 
 /* Menu Styling */
