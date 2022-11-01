@@ -146,64 +146,25 @@ body {
 }
 
 /* Image Container */
-#image-container {
-	position: relative;
+#stats-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	width: 100%;
 	height: 200vh;
+	padding: 10vh 10vw;
 	border: 1px solid red;
 }
 
-#image-container img {
-	width: 20rem;
-	height: 10rem;
-	filter: gray; /* IE6-9 */
-  filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
-	-webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+#stats-container div {
+	font-size: 2rem;
+	border: 1px solid black;
 }
 
-#image-container img {
-  filter: gray; /* IE6-9 */
-  filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
-	-webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+.line-through {
+	text-decoration: line-through;
 }
 
-/* Disable grayscale on hover */
-img:hover {
-  -webkit-filter: grayscale(0);
-  filter: none;
-}
-
-#image-container :nth-child(1) {
-	position: absolute;
-	top: 10vh;
-	left: 20vw;
-	width: 35rem;
-	height: 20rem;
-}
-
-#image-container :nth-child(2) {
-	position: absolute;
-	top: 30vh;
-	left: 40vw;
-	width: 15rem;
-	height: 25rem;
-}
-
-#image-container :nth-child(3) {
-	position: absolute;
-	top: 60vh;
-	left: 25vh;
-	width: 30rem;
-	height: 15rem;
-}
-
-#image-container :nth-child(4) {
-	position: absolute;
-	top: 40vh;
-	left: 50vw;
-	width: 30rem;
-	height: 15rem;
-}
 
 /* Wave at bottom of main container */
 .bottom-wave {
