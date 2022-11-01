@@ -1,7 +1,9 @@
 import './style.css';
 import { slogans } from './variables'
-import FallingMan from './falling-man.jpg';
-import PeoplePower from './people-power.jpg';
+import FallingMan from './images/falling-man.jpg';
+import Protest from './images/protest.jpg';
+import ObeyPoster from './images/obey-poster.jpg';
+import TiananmenSquare from './images/tiananmen-square.jpg';
 
 export default class Main {
 
@@ -23,6 +25,10 @@ export default class Main {
     this.menuToggleListener();
   }
 
+  parallaxScrolling() {
+    const rellax = new Rellax('.rellax');
+  }
+
   randomSlogan() {
     const sloganContainer = document.getElementById('slogan-container');
     const index = Math.floor(Math.random() * slogans.length);
@@ -33,10 +39,22 @@ export default class Main {
   loadImages() {
     const imageContainer = document.getElementById('image-container');
     const fallingManImage = new Image();
-    const peoplePowerImage = new Image();
+    const protestImage = new Image();
+    const obeyPosterImage = new Image();
+    const tiananmenSquareImage = new Image();
     fallingManImage.src = FallingMan;
-    peoplePowerImage.src = PeoplePower;
-    imageContainer.append(fallingManImage, peoplePowerImage);
+    protestImage.src = Protest;
+    obeyPosterImage.src = ObeyPoster;
+    tiananmenSquareImage.src = TiananmenSquare;
+    fallingManImage.classList.add('rellax');
+    protestImage.classList.add('rellax');
+    obeyPosterImage.classList.add('rellax');
+    tiananmenSquareImage.classList.add('rellax');
+    fallingManImage.dataset.rellaxSpeed = '2';
+    protestImage.dataset.rellaxSpeed = '0.5';
+    obeyPosterImage.dataset.rellaxSpeed = '-2';
+    tiananmenSquareImage.dataset.rellaxSpeed = '1';
+    imageContainer.append(obeyPosterImage, fallingManImage, protestImage, tiananmenSquareImage);
   }
 
   menuToggleListener() {
