@@ -147,24 +147,66 @@ body {
 
 /* Image Container */
 #stats-container {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 100%;
+	width: 85%;
 	height: 200vh;
-	padding: 10vh 10vw;
+	margin: 10vh 10vw;
+	padding: 3rem;
 	border: 1px solid red;
 }
 
-#stats-container div {
+#stats-container > div {
+	align-self: flex-start;
+	margin-left: 3rem;
 	font-size: 2rem;
-	border: 1px solid black;
+	font-family: 'GT Thin Median';
 }
 
-.line-through {
+#stats-container > :nth-child(3) {
+	font-size: 4rem;
+	font-family: 'GT Ultra Fine';
+}
+
+#stats-container > :nth-child(6) {
+	align-self: flex-end;
+	margin-top: 2rem;
+	font-size: 2rem;
+	font-family: 'GT Light Median';
+}
+
+#stats-container .turn {
+	/* position: absolute;
+	top: 0;
+	left: 0; */
+	margin-left: 0rem;
+	writing-mode: vertical-lr;
+	/* transform: rotate(180deg); */
+}
+
+.question {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.question :first-child span {
+	white-space: pre-wrap;
+}
+
+#stats-container .line-through {
+	font-family: 'GT Thin Median Italic';
 	text-decoration: line-through;
+	text-decoration-thickness: 0.1rem;
 }
 
+#stats-container .quote {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
 
 /* Wave at bottom of main container */
 .bottom-wave {

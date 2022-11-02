@@ -14,7 +14,6 @@ export default class Main {
 
   createUI() {
     this.randomSlogan();
-    this.loadImages();
   }
 
   addListeners() {
