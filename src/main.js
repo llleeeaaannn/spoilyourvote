@@ -21,7 +21,9 @@ export default class Main {
   }
 
   parallaxScrolling() {
-    const rellax = new Rellax('.rellax');
+    const rellax = new Rellax('.rellax', {
+      wrapper:'#stats-container'
+    });
   }
 
   randomSlogan() {

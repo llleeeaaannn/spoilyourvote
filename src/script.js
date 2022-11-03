@@ -1,8 +1,11 @@
 import './style.css';
 import Main from './main.js';
-import Rellax from 'rellax'
+import LocomotiveScroll from 'locomotive-scroll';
 
-const rellax = new Rellax('.rellax', { horizontal:true });
+const scroll = new LocomotiveScroll({
+  el: document.querySelector('[data-scroll-container]'),
+  smooth: true
+});
 
 const main = new Main();
 main.start();
